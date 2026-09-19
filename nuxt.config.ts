@@ -53,9 +53,8 @@ export default defineNuxtConfig({
     }
   },
 
-  // TODO: mettre à jour `domain` avec l'URL de déploiement définitive une fois le site en ligne.
   llms: {
-    domain: 'https://claude-tips.example.com/',
+    domain: 'https://claude.romrd.fr/',
     title: 'Claude Code, expliqué simplement',
     description: 'Documentation pédagogique en français sur Claude Code, l\'outil en ligne de commande.',
     sections: [

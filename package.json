@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:cloudflare": "NITRO_PRESET=cloudflare-module nuxt build",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "deploy": "pnpm build:cloudflare && wrangler deploy && pnpm db:seed",
+    "db:seed": "node scripts/seed-d1.mjs && wrangler d1 execute DB --remote --file=.output/d1/docs.sql && wrangler d1 execute DB --remote --file=.output/d1/landing.sql"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.131",
@@ -21,6 +24,7 @@
     "@nuxtjs/mdc": "^0.23.1",
     "@takumi-rs/core": "^2.13.7",
     "@vueuse/core": "^14.4.0",
+    "agents": "^0.24.0",
     "minimark": "^0.2.0",
     "nuxt": "^4.5.2",
     "nuxt-llms": "0.2.0",
@@ -35,7 +39,8 @@
     "eslint": "^10.10.0",
     "eslint-plugin-better-tailwindcss": "^4.7.0",
     "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.11",
+    "wrangler": "^4.135.0"
   },
   "packageManager": "pnpm@12.4.2"
 }
