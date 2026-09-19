@@ -12,8 +12,7 @@
     {
       "binding": "DB",
       "database_name": "claude-tips-content",
-      // À remplacer par l'id renvoyé par `wrangler d1 create claude-tips-content`.
-      "database_id": "TODO-database-id"
+      "database_id": "783c1a25-2f31-4173-a510-d50a1373afbb"
     }
   ],
   // Nécessite que la zone DNS de claude.romrd.fr soit gérée par Cloudflare.
