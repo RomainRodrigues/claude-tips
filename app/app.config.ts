@@ -25,9 +25,8 @@ export default defineAppConfig({
     search: true,
     colorMode: true,
     links: [{
-      // TODO: remplacer par l'URL du dépôt une fois le repo rendu public
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/TODO-username/claude-tips',
+      'to': 'https://github.com/RomainRodrigues/claude-tips',
       'target': '_blank',
       'aria-label': 'GitHub'
     }]
@@ -36,9 +35,8 @@ export default defineAppConfig({
     credits: `Guide non officiel sur Claude Code • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
-      // TODO: remplacer par l'URL du dépôt une fois le repo rendu public
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/TODO-username/claude-tips',
+      'to': 'https://github.com/RomainRodrigues/claude-tips',
       'target': '_blank',
       'aria-label': 'GitHub'
     }]
@@ -47,7 +45,7 @@ export default defineAppConfig({
     title: 'Sommaire',
     bottom: {
       title: 'Ressources',
-      edit: 'https://github.com/TODO-username/claude-tips/edit/main/content',
+      edit: 'https://github.com/RomainRodrigues/claude-tips/edit/main/content',
       links: [{
         icon: 'i-lucide-book-open',
         label: 'Doc officielle Claude Code',

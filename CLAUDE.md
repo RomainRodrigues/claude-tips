@@ -80,5 +80,6 @@ Validée avec l'utilisateur le 2026-09-19. État : ✅ écrite, ⏳ pas encore r
 
 ## À ne pas oublier
 
-- `app/app.config.ts` (`header.links`, `footer.links`) et `nuxt.config.ts` (`llms.domain`) contiennent des `TODO` avec des placeholders GitHub/domaine — à remplacer une fois le dépôt et le déploiement définitifs connus.
-- `nuxt.config.ts` → `llms.sections` a été retiré lors du nettoyage (il pointait vers les anciennes pages de démo) ; à recréer une fois les sections 1–8 ci-dessus peuplées, pour que `/llms.txt` reflète la vraie structure.
+- Dépôt : [github.com/RomainRodrigues/claude-tips](https://github.com/RomainRodrigues/claude-tips) — déjà renseigné dans `app/app.config.ts` (`header.links`, `footer.links`, `toc.bottom.edit`).
+- `nuxt.config.ts` → `llms.domain` reste un placeholder (`claude-tips.example.com`) — à remplacer par l'URL de déploiement définitive une fois le site en ligne.
+- `nuxt.config.ts` → `llms.sections` référence déjà les 8 sections validées ci-dessus (filtres par préfixe de chemin) ; `/llms.txt` inclura chaque section au fur et à mesure qu'elle sera peuplée, aucune modification nécessaire en ajoutant du contenu.
