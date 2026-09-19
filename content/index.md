@@ -20,7 +20,7 @@ La doc officielle est complète mais dense. Ici, chaque fonctionnalité de Claud
 #links
   :::u-button
   ---
-  to: /
+  to: /demarrer/vue-densemble
   size: xl
   trailing-icon: i-lucide-arrow-right
   ---
@@ -110,7 +110,7 @@ Pourquoi ce site
   ---
   links:
     - label: Commencer
-      to: /
+      to: /demarrer/vue-densemble
       trailingIcon: i-lucide-arrow-right
     - label: Voir la doc officielle
       to: 'https://code.claude.com/docs'

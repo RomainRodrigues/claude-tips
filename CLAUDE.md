@@ -53,33 +53,29 @@ Page de référence de style déjà écrite : [`content/1.demarrer/2.installatio
 
 ## Arborescence du contenu
 
-Validée avec l'utilisateur le 2026-09-19. État : ✅ écrite, ⏳ pas encore rédigée (dossier/fichier à créer).
+Validée avec l'utilisateur le 2026-09-19. Rédaction complète (8/8 sections) le 2026-09-19.
 
-- **1. Démarrer** (`1.demarrer/`)
-  - ⏳ Vue d'ensemble — c'est quoi Claude Code
-  - ✅ Installation et premier lancement (`2.installation-premier-lancement.md`)
-  - ⏳ Authentification
-  - ⏳ Premier vrai cas d'usage (quickstart)
-  - ⏳ L'interface du mode interactif
-- **2. Utilisation quotidienne** (`2.usage-quotidien/`)
-  - Modes de permission (normal / plan / auto-accept), raccourcis clavier, commandes slash intégrées, gérer le contexte (`/compact`, `/clear`), checkpoints/rewind, sessions, workflows courants, bonnes pratiques
-- **3. Mémoire & configuration** (`3.memoire-configuration/`)
-  - `CLAUDE.md` et mémoire auto, fichiers de settings (user/projet/local) et priorité, permissions en détail, modèle/fast mode/output styles, personnaliser le terminal (statusline, rendu, accessibilité)
-- **4. Étendre Claude Code** (`4.etendre/`)
-  - Commandes personnalisées, subagents, skills, hooks, MCP, plugins
-- **5. Automatiser** (`5.automatiser/`)
-  - Mode headless (`-p`) et scripts, GitHub Actions / GitLab CI, tâches planifiées (`/loop`, routines)
-- **6. Agent SDK** (`6.agent-sdk/`)
-  - Vue d'ensemble et quickstart, boucle agentique, sessions et streaming, outils personnalisés et MCP, permissions et hooks dans le SDK, références TypeScript/Python
-- **7. Recettes** (`7.recettes/`)
-  - Cas d'usage bout en bout — liste à définir, section vide pour l'instant
-- **8. Référence rapide** (`8.reference/`)
-  - CLI reference, variables d'environnement, glossaire, erreurs courantes
+- **1. Démarrer** (`1.demarrer/`) ✅ — vue d'ensemble, installation et premier lancement, authentification, premier vrai cas d'usage (quickstart), interface du mode interactif
+- **2. Utilisation quotidienne** (`2.usage-quotidien/`) ✅ — modes de permission, raccourcis clavier, commandes slash, gérer le contexte (`/compact`, `/clear`), checkpoints/rewind, sessions, workflows courants, bonnes pratiques
+- **3. Mémoire & configuration** (`3.memoire-configuration/`) ✅ — `CLAUDE.md` et mémoire auto, fichiers de settings (user/projet/local) et priorité, permissions en détail, modèle/fast mode/output styles, personnaliser le terminal
+- **4. Étendre Claude Code** (`4.etendre/`) ✅ — commandes personnalisées, subagents, skills, hooks, MCP, plugins
+- **5. Automatiser** (`5.automatiser/`) ✅ — mode headless (`-p`) et scripts, GitHub Actions / GitLab CI, tâches planifiées (`/loop`, routines)
+- **6. Agent SDK** (`6.agent-sdk/`) ✅ — vue d'ensemble et quickstart, boucle agentique, sessions et streaming, outils personnalisés et MCP, permissions et hooks dans le SDK, références TypeScript/Python
+- **7. Recettes** (`7.recettes/`) ✅ — 5 cas d'usage bout en bout (bug fix, tests, refactor sécurisé, revue de PR en CI, brancher sa doc via MCP)
+- **8. Référence rapide** (`8.reference/`) ✅ — CLI reference, variables d'environnement, glossaire, erreurs courantes
 
 **Hors périmètre pour l'instant** (noté comme piste future, pas de page créée) : les autres surfaces de Claude Code (VS Code, JetBrains, Desktop, Web, mobile, Slack) et la partie entreprise/admin (déploiement, gateways, SSO). À reconsidérer plus tard si le site devient plus large que l'usage terminal.
+
+**Convention de lien interne** : toujours utiliser le chemin sans le préfixe numérique du dossier — `[Sessions](/usage-quotidien/sessions)`, jamais `/2.usage-quotidien/6.sessions`. Nuxt Content retire les préfixes numériques des routes réelles ; un lien qui les garde renvoie une 404. Un lien vers la racine d'une section (`/usage-quotidien` seul) 404 aussi : il n'y a pas de page d'index par section, seulement des pages enfants — toujours lier une page précise.
+
+## Points de vigilance restants (relecture humaine conseillée)
+
+- `content/8.reference/4.erreurs-courantes.md` : la page officielle source (`errors.md`) a refusé une extraction verbatim ; le contenu s'appuie sur des erreurs génériques bien connues plutôt qu'une table exhaustive vérifiée mot pour mot. À enrichir si besoin d'exhaustivité.
+- `content/8.reference/2.variables-denvironnement.md` : la page officielle (`env-vars.md`) est très longue et le fetch a été tronqué après les variables en A–C ; le reste du tableau s'appuie sur des mentions croisées dans d'autres pages plutôt que la table complète. À revérifier si une variable précise manque.
+- Les liens internes ont été audités et corrigés une fois (préfixes numériques retirés) — si de nouvelles pages sont ajoutées, re-vérifier ce point avant de committer.
 
 ## À ne pas oublier
 
 - Dépôt : [github.com/RomainRodrigues/claude-tips](https://github.com/RomainRodrigues/claude-tips) — déjà renseigné dans `app/app.config.ts` (`header.links`, `footer.links`, `toc.bottom.edit`).
 - `nuxt.config.ts` → `llms.domain` reste un placeholder (`claude-tips.example.com`) — à remplacer par l'URL de déploiement définitive une fois le site en ligne.
-- `nuxt.config.ts` → `llms.sections` référence déjà les 8 sections validées ci-dessus (filtres par préfixe de chemin) ; `/llms.txt` inclura chaque section au fur et à mesure qu'elle sera peuplée, aucune modification nécessaire en ajoutant du contenu.
+- `nuxt.config.ts` → `llms.sections` référence les 8 sections ci-dessus (filtres par préfixe de chemin) ; `/llms.txt` les reflète déjà toutes.
