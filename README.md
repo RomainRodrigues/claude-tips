@@ -32,3 +32,18 @@ pnpm preview
 ```
 
 Voir [CLAUDE.md](./CLAUDE.md) pour les conventions de rédaction et l'organisation du contenu.
+
+## Protection de `main` (production)
+
+Pour empêcher les pushes directs sur `main`, configure un ruleset GitHub :
+
+- **Target** : branche `main`
+- **Require a pull request before merging**
+- **Require approvals** (au moins 1)
+- **Require conversation resolution before merging**
+- **Require status checks to pass** avec le check `ci`
+- **Block force pushes**
+- **Block branch deletion**
+- **Do not allow bypassing the above settings** (y compris admins)
+
+Ce dépôt inclut aussi un fichier [`.github/CODEOWNERS`](./.github/CODEOWNERS) pour imposer une revue sur les zones principales.
