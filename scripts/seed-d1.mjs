@@ -13,5 +13,11 @@ mkdirSync('.output/d1', { recursive: true })
 for (const collection of collections) {
   const raw = readFileSync(`.output/public/dump.${collection}.sql`, 'utf8')
   const statements = JSON.parse(gunzipSync(Buffer.from(raw, 'base64')).toString('utf8'))
-  writeFileSync(`.output/d1/${collection}.sql`, statements.join('\n'))
+  // `_content_info` n'est jamais droppé entre deux dumps (contrairement aux
+  // tables de contenu, recréées à chaque fois) : sur un redeploy, l'INSERT
+  // brut entre en conflit avec la ligne déjà présente pour ce même id.
+  const sql = statements
+    .join('\n')
+    .replace(/INSERT INTO _content_info/g, 'INSERT OR REPLACE INTO _content_info')
+  writeFileSync(`.output/d1/${collection}.sql`, sql)
 }
