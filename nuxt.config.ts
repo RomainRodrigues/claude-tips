@@ -53,34 +53,16 @@ export default defineNuxtConfig({
     }
   },
 
+  // TODO: mettre à jour `domain` avec l'URL de déploiement définitive, et
+  // les `sections` avec les vraies sections une fois l'arborescence validée.
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
-    title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
-    full: {
-      title: 'Nuxt Docs Template - Full Documentation',
-      description: 'This is the full documentation for the Nuxt Docs Template.'
-    },
-    sections: [
-      {
-        title: 'Getting Started',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
-        ]
-      },
-      {
-        title: 'Essentials',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
-        ]
-      }
-    ]
+    domain: 'https://claude-tips.example.com/',
+    title: 'Claude Code, expliqué simplement',
+    description: 'Documentation pédagogique en français sur Claude Code, l\'outil en ligne de commande.'
   },
 
   mcp: {
-    name: 'Docs template'
+    name: 'Claude Code, expliqué simplement'
   },
 
   ogImage: {
